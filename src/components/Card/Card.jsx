@@ -10,7 +10,10 @@ import {
 export const Card = ({ img, name, info = [], onClick }) => {  
   return (
     <Wrapper onClick={onClick}>
-      <Picture />
+      <Picture
+        src={img}
+        alt={name}
+      />
       <CardBody>
         <CardTitle>{name}</CardTitle>
         <CardList>
