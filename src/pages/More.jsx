@@ -1,28 +1,26 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
 import { searchByCountry } from "../configs";
+import { Button } from "../components/Button/Button";
+import { InfoCountry } from "../components/InfoCountry/InfoCountry";
 
 export const More = ({ match }) => {
   const { name } = useParams();
-  const navigate = useNavigate();
-  navigate(-1);
+  const { push, goBack } = useHistory();
   const [country, setCountry] = useState(null);
-
-  console.log(country);
-
+  
   useEffect(() => {
-    axios.get(searchByCountry(name)
-      .then(({data}) => setCountry(data[0])));
+    axios.get(searchByCountry(name)).then(({ data }) => setCountry(data[0]));
   }, [name]);
   
   return (
     <div>
-      <button onClick={navigate}>
+      <Button onClick={goBack}>
         <IoArrowBack /> Back
-      </button>
-      {name}
+      </Button>
+      {country && <InfoCountry push={push} {...country} />}
     </div>
   );
 };
