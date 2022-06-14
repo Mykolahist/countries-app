@@ -1,3 +1,3 @@
 # A simple and interesting SPA Countries
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple SPA for searching information about countries. You can go by the link: (https://mykolahist-countries-app.netlify.app).
