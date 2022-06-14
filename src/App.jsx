@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 import { Header } from "./components/Header/Header";
@@ -15,13 +15,14 @@ export const App = () => {
     <>
       <Header />
       <Main>
-        <Switch>
-          <Route exact path="/">
-            <HomePage countries={countries} setCountries={setCountries} />
-          </Route>        
-          <Route path="/country/:name" component={More} />
-          <Route component={NotFound} />
-        </Switch>
+        <Routes>
+          <Route index element={<HomePage
+            countries={countries}
+            setCountries={setCountries}
+          />} />                   
+          <Route path="/country/:name" element={<More />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </Main>
     </>
   );

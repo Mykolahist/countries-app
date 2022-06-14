@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { filterByCode } from "../../configs";
 import { ListGroup, ListItem, List, Meta, InfoImage, Tag, TagGroup, InfoTitle, Wrapper } from "./InfoCountry.styled";
 
@@ -15,11 +16,12 @@ export const InfoCountry = (props) => {
     topLevelDomain,
     currencies = [],
     languages = [],
-    borders = [],
-    push,
+    borders = []
   } = props;
 
   const [neighbors, setNeighbors] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (borders.length)
@@ -80,7 +82,7 @@ export const InfoCountry = (props) => {
           ) : (
             <TagGroup>
               {neighbors.map((b) => (
-                <Tag key={b} onClick={() => push(`/country/${b}`)}>
+                <Tag key={b} onClick={() => navigate(`/country/${b}`)}>
                   {b}
                 </Tag>
               ))}

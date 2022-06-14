@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Controls } from "../components/Controls/Controls";
 import { CountryList } from "../components/CountryList/CountryList";
@@ -10,7 +10,7 @@ import { ALL_COUNTRIES } from "../configs";
 export const HomePage = ({ setCountries, countries }) => {
   const [filteredCountries, setFilteredCountries] = useState(countries);
 
-  const { push } = useHistory();
+  const navigate = useNavigate();
 
   const handleSearch = (search, region) => {
     let data = [...countries];
@@ -29,6 +29,7 @@ export const HomePage = ({ setCountries, countries }) => {
   useEffect(() => {
     if (!countries.length)
       axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data));
+    
     // eslint-disable-next-line
   }, []);
 
@@ -64,7 +65,7 @@ export const HomePage = ({ setCountries, countries }) => {
           return (
             <Card
               key={c.name}
-              onClick={() => push(`/country/${c.name}`)}            
+              onClick={() => navigate(`/country/${c.name}`)}            
               {...countryInfo}
             />
           )

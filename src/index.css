@@ -16,7 +16,7 @@
 }
 
 body[data-theme="dark"] {
-  color: hsl(0, 0%, 100%);
+  --colors-text: hsl(0, 0%, 100%);
   --colors-bg: hsl(207, 26%, 17%);
   --colors-ui-base: hsl(209, 23%, 22%);
 
@@ -24,7 +24,7 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="light"] {
-  color: hsl(200, 15%, 8%);
+  --colors-text: hsl(200, 15%, 8%);
   --colors-bg: hsl(0, 0%, 98%);
   --colors-ui-base: hsl(0, 0%, 100%);
 
@@ -34,7 +34,7 @@ body[data-theme="light"] {
 body {
   margin: 0;
   font-family: var(--family);
-  /* color: var(--colors-text); */
+  color: var(--colors-text);
   font-weight: var(--fw-light);
   background-color: var(--colors-bg);
 }
