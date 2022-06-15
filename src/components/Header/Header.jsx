@@ -6,7 +6,7 @@ import { HeaderEl, Wrapper, Title, ModeSwitcher } from "./Header.styled";
 
 export const Header = () => {
   const [theme, setTheme] = useState("light");
-
+  
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   useEffect(() => {
@@ -18,7 +18,9 @@ export const Header = () => {
       <Container>
         <Wrapper>
           <Title>Where is the world?</Title>
-          <ModeSwitcher onClick={toggleTheme}>
+          <ModeSwitcher
+            onClick={toggleTheme}
+          >
             {theme === "light" ? (
             <IoMoonOutline size="14px" />
             ) : (
