@@ -7,7 +7,7 @@ export const Search = ({ search, setSearch }) => {
 
   return (
     <InputContainer>
-      <IoSearch />
+      <IoSearch />      
       <Input
         onChange={onHandleChange}
         value={search}

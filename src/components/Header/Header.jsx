@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { IoMoonOutline, IoMoon } from "react-icons/io5";
 
-import { Container } from "../Container";
+import { Container } from "../Container/Container";
 import { HeaderEl, Wrapper, Title, ModeSwitcher } from "./Header.styled";
 
 export const Header = () => {
