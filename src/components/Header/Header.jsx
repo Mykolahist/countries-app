@@ -27,7 +27,7 @@ export const Header = () => {
               <IoMoon size="14px" />
             )}
             {" "}
-            <span style={{ marginLeft: "0.75rem", color: "var(--colors-text)" }}>{theme} Theme</span>
+            <span style={{ marginLeft: "12px", color: "var(--text-color)" }}>{theme} Theme</span>
           </ModeSwitcher>
         </Wrapper>
       </Container>

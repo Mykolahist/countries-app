@@ -7,9 +7,9 @@ export const CustomSelect = styled(Select).attrs({
     control: (provided) => ({
       ...provided,
       backgroundColor: "var(--colors-ui-base)",
-      color: "var(--colors-text)",
-      borderRadius: "var(--radii)",
-      padding: "0.25rem",
+      color: "var(--text-color)",
+      borderRadius: "var(--b-radius)",
+      padding: "4px",
       border: "none",
       boxShadow: "var(--shadow)",
       height: "50px",
@@ -17,16 +17,16 @@ export const CustomSelect = styled(Select).attrs({
     option: (provided, state) => ({
       ...provided,
       cursor: "pointer",
-      color: "var(--colors-text)",
+      color: "var(--text-color)",
       backgroundColor: state.isSelected
-        ? "var(--colors-bg)"
+        ? "var(--bg-color)"
         : "var(--colors-ui-base)",
     })
   }
 })`
   width: 200px;
-  border-radius: var(--radii);
-  font-family: var(--family);
+  border-radius: var(--b-radius);
+  font-family: var(--font);
   border: none;
 
   & > * {
@@ -34,10 +34,10 @@ export const CustomSelect = styled(Select).attrs({
   }
 
   & input {
-    padding-left: 0.25rem;
+    padding-left: 4px;
   }
   & * {
-    color: var(--colors-text) !important;
+    color: var(--text-color) !important;
   }
   & > div[id] {
     background-color: var(--colors-ui-base);

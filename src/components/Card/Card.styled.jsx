@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.article`
-  border-radius: var(--radii);
+  border-radius: var(--b-radius);
   background-color: var(--colors-ui-base);
   box-shadow: var(--shadow);
   cursor: pointer;
@@ -18,27 +18,27 @@ export const Picture = styled.img`
 `;
 
 export const CardBody = styled.div`
-  padding: 1rem 1.5rem 2rem;
+  padding: 16px 24px 32px;
 `;
 
 export const CardTitle = styled.h3`
   margin: 0;
-  font-size: var(--fs-md);
-  font-weight: var(--fw-bold);
+  font-size: var(--font-middle);
+  font-weight: var(--font-bold);
 `;
 
 export const CardList = styled.ul`
   list-style: none;
   margin: 0;
-  padding: 1rem 0 0;
+  padding: 16px 0 0;
 `;
 
 export const CardItem = styled.li`
-  font-size: var(--fs-sm);
+  font-size: var(--font-small);
   line-height: 1.5;
-  font-weight: var(--fw-light);
+  font-weight: var(--font-light);
   
   & > b {
-    font-weight: var(--fw-bold);
+    font-weight: var(--font-bold);
   }
 `;
